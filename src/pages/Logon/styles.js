@@ -8,7 +8,7 @@ export const Container = styled.div`
 
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 
   section {
     width: 100%;
@@ -21,24 +21,6 @@ export const Container = styled.div`
       h1 {
         font-size: 32px;
         margin-bottom: 32px;
-      }
-
-      a {
-        display: flex;
-        align-items: center;
-        margin-top: 20px;
-        font-weight: 500;
-        text-decoration: none;
-        color: #333;
-        transition: opacity 0.2s;
-
-        &:hover {
-          opacity: 0.8;
-        }
-
-        svg {
-          margin-right: 5px;
-        }
       }
     }
   }

@@ -33,6 +33,17 @@ export default createGlobalStyle`
     padding: 0 24px;
   }
 
+  form textarea{
+    width: 100%;
+    min-height: 140px;
+    resize: vertical;
+    color: #333;
+    border: 1px solid #dcdce6;
+    border-radius: 8px;
+    padding: 16px 24px;
+    line-height: 24px;
+  }
+
   .button {
     width: 100%;
     height: 60px;
@@ -51,6 +62,24 @@ export default createGlobalStyle`
 
     &:hover {
       background: ${darken(0.03, '#e02041')}
+    }
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #333;
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    svg {
+      margin-right: 5px;
     }
   }
 `;
