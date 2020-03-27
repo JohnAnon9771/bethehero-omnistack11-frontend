@@ -1,17 +1,29 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 import { Form } from '@unform/web';
 import { FiArrowLeft } from 'react-icons/fi';
+import { toast } from 'react-toastify';
 import Input from '../../components/Input';
+
+import api from '../../service/api';
 
 import logo from '../../assets/logo.svg';
 
 import { Container, Content, InputGroup } from './styles';
 
 export default function Register() {
-  function handleSubmit(data) {
-    console.log(data);
+  const history = useHistory();
+  async function handleSubmit(data) {
+    try {
+      const response = await api.post('/ongs', { ...data });
+      toast.success(
+        `Parabéns! Você foi cadastrado, entre com o seu ID: ${response.data.id}`
+      );
+      history.push('/');
+    } catch (error) {
+      toast.error('Falha no cadastro, tente novamente mais tarde!');
+    }
   }
   return (
     <Container>
